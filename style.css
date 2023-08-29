@@ -52,6 +52,7 @@ html {
     border: none;
     margin-top: 3.5rem;
     transition: background-color .3s;
+    cursor: pointer;
 }
 
 .boxes {
@@ -73,6 +74,8 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    transition: all .5s;
 }
 
 @keyframes boxAnim {

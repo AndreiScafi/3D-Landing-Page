@@ -32,10 +32,10 @@ const textStyle = () => {
 }
 
 let interval = setInterval(() => {
-    boxes.forEach((box) => {
+    boxes.forEach((box, index) => {
         if (current > boxes.length) current = 1;
 
-        if (box.classList[1].split("-")[1] * 1 === current) {
+        if (index + 1 === current) {
             box.classList.add("active");
         } else {
             box.classList.remove("active");
@@ -44,5 +44,19 @@ let interval = setInterval(() => {
     textStyle()
     current++;
 }, 5000);
+
+boxes.forEach((box, index) => {
+    box.addEventListener('click', () => {
+        boxes.forEach((cube) => {
+            cube.classList.remove('active')
+        })
+        box.classList.add('active');
+
+        current = index + 1;
+        /* current = box.classList[1].split("-")[1] * 1;*/
+        clearInterval(interval);
+        textStyle();
+    })
+})
 
 
