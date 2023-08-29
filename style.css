@@ -58,6 +58,12 @@ html {
     perspective: 150rem;
 }
 
+.active.box {
+    top: 0;
+    left: 0;
+    transition: all .5s;
+}
+
 .box {
     transform-style: preserve-3d;
     transform: rotateY(45deg) rotateX(30deg);
@@ -78,6 +84,12 @@ html {
 
 }
 
+.active.box div {
+    width: 16rem;
+    height: 16rem;
+    transition: all .2s .5s ease-in-out;
+}
+
 .box div {
     width: 7rem;
     height: 7rem;
@@ -85,6 +97,32 @@ html {
     opacity: .8;
     box-shadow: .1rem .1rem .1rem #eee inset, -.1rem -.1rem .1rem #eee inset, .1rem .1rem 3.5rem rgba(255, 2555, 255, .2), -.1rem -.1rem 3.5rem rgba(255, 2555, 255, .2);
 }
+
+.active .top-side {
+    transform: rotateX(90deg) translateZ(8rem);
+}
+
+.active .bottom-side {
+    transform: rotateX(90deg) translateZ(-8rem);
+}
+
+.active .front-side {
+    transform: translateZ(8rem);
+}
+
+.active .back-side {
+    transform: translateZ(-8rem);
+}
+
+.active .right-side {
+    transform: rotateY(90deg) translateZ(8rem);
+}
+
+.active .left-side {
+    transform: rotateY(90deg) translateZ(-8rem);
+}
+
+
 
 .top-side {
     transform: rotateX(90deg) translateZ(3.5rem);
