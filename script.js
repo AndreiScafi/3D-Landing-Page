@@ -47,15 +47,21 @@ let interval = setInterval(() => {
 
 boxes.forEach((box, index) => {
     box.addEventListener('click', () => {
+
+        const activeBox = document.querySelector('.box.active');
+
         boxes.forEach((cube) => {
             cube.classList.remove('active')
         })
-        box.classList.add('active');
 
-        current = index + 1;
-        /* current = box.classList[1].split("-")[1] * 1;*/
-        clearInterval(interval);
-        textStyle();
+
+        if (box !== activeBox) {
+            box.classList.add('active');
+            current = index + 1;
+            /* current = box.classList[1].split("-")[1] * 1;*/
+            clearInterval(interval);
+            textStyle();
+        }
     })
 })
 
